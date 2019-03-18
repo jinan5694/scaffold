@@ -38,6 +38,14 @@ export default {
   },
   mounted () {
     console.log('hello vue.')
+    this.test()
+  },
+  methods: {
+    test () {
+      this.$axios.get('/api2/UserService/getCurrentUser').then(resp => {
+
+      })
+    }
   }
 }
 </script>

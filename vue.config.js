@@ -1,3 +1,4 @@
+
 module.exports = {
   // 放置生成的静态资源（js、css、img、fonts）的目录
   assetsDir: 'assets',
@@ -7,13 +8,14 @@ module.exports = {
   publicPath: '',
   devServer: {
     overlay: {
-      warnings: true,
+      warnings: false,
       errors: true
     },
+    port: 8083,
     proxy: {
-      '/api': {
-        target: 'http://cloudbrain.aicloudata.com/gateway/dms/api',
+      '/api2': {
         changeOrigin: true,
+        target: 'http://cloudbrain.aicloudata.com/gateway/dms/api',
         ws: false
       }
     }
