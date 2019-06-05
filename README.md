@@ -1,4 +1,4 @@
-# dms test
+# 前端项目脚手架
 
 ## Project setup
 ```
@@ -27,3 +27,10 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### self signed certificate in certificate chain
+```bash
+npm config set strict-ssl false
+npm config set unsafe-perm true
+```
