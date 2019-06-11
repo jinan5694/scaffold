@@ -12,12 +12,14 @@ module.exports = {
       errors: true
     },
     port: 8083,
-    proxy: {
-      '/api2': {
-        changeOrigin: true,
-        target: 'http://cloudbrain.aicloudata.com/gateway/dms/api',
-        ws: false
-      }
-    }
+    public: 'localhost:8083'
+
+    // proxy: {
+    //   '/api': {
+    //     changeOrigin: true,
+    //     target: 'http://cloudbrain.aicloudata.com/gateway/dms/api',
+    //     ws: false
+    //   }
+    // }
   }
 }

@@ -1,5 +1,20 @@
 # 前端项目脚手架
 
+## 技术选型
+- element-ui or ant-design-vue
+- sass or less
+- jest
+- mock
+- proxy
+- i18n
+- login/logout
+- axios config
+- svg icon
+- custom theme
+- multi tab
+- layout 
+- menu
+
 ## Project setup
 ```
 npm install
