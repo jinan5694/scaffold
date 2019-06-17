@@ -14,15 +14,6 @@
         <Header />
       </el-header>
       <el-main>
-        <el-button type="primary">
-          test2
-        </el-button>
-        <p
-          v-for="i in 40"
-          :key="i"
-        >
-          {{ i }}
-        </p>
         <slot />
       </el-main>
     </el-container>

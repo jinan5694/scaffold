@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    locale: 'zh',
     isCollapse: false,
     isStartup: false
   },
@@ -14,6 +15,9 @@ export default new Vuex.Store({
     },
     setStartup (state, status) {
       state.isStartup = status
+    },
+    switchLocale (state, locale) {
+      state.locale = locale
     }
   },
   actions: {
