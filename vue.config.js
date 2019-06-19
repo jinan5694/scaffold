@@ -1,4 +1,7 @@
 
+const port = 8088
+
+console.log('url', process.env.VUE_APP_URL)
 module.exports = {
   // 放置生成的静态资源（js、css、img、fonts）的目录
   assetsDir: 'assets',
@@ -11,15 +14,15 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    port: 8083,
-    public: 'localhost:8083'
-
-    // proxy: {
-    //   '/api': {
-    //     changeOrigin: true,
-    //     target: 'http://cloudbrain.aicloudata.com/gateway/dms/api',
-    //     ws: false
-    //   }
-    // }
+    port: port,
+    public: `localhost:${port}`,
+    proxy: {
+      '/api': {
+        changeOrigin: true,
+        target: process.env.VUE_APP_URL,
+        pathRewrite: { '^/api': '' },
+        ws: false
+      }
+    }
   }
 }

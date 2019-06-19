@@ -7,7 +7,7 @@ import { Message } from 'element-ui'
 import { getToken } from '@/utils/token'
 
 const instance = axios.create({
-  baseURL: '/jinan',
+  baseURL: '/api',
   timeout: 10000,
   responseType: 'json',
   withCredentials: true, // 是否允许带cookie这些

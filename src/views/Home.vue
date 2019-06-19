@@ -22,9 +22,19 @@ export default {
       value: null
     }
   },
+  created () {
+    this.query()
+  },
   methods: {
     toggleLocale () {
+      debugger
       this.$i18n.locale = this.$i18n.locale === 'en' ? 'cn' : 'en'
+    },
+    query () {
+      const url = '/orgs/octokit/repos'
+      this.$axios.get(url).then(resp => {
+        console.log(resp.data)
+      })
     }
   }
 }
