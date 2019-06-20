@@ -6,9 +6,11 @@ import { Message } from 'element-ui'
 
 import { getToken } from '@/utils/token'
 
+import baseUrl from '../config/url'
+
 const instance = axios.create({
-  baseURL: '/api',
-  timeout: 10000,
+  baseURL: baseUrl,
+  timeout: 3000,
   responseType: 'json',
   withCredentials: true, // 是否允许带cookie这些
   headers: {

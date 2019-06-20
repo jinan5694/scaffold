@@ -27,7 +27,6 @@ export default {
   },
   methods: {
     toggleLocale () {
-      debugger
       this.$i18n.locale = this.$i18n.locale === 'en' ? 'cn' : 'en'
     },
     query () {

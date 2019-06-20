@@ -2,6 +2,7 @@
 const port = 8088
 
 console.log('url', process.env.VUE_APP_URL)
+
 module.exports = {
   // 放置生成的静态资源（js、css、img、fonts）的目录
   assetsDir: 'assets',
