@@ -1,8 +1,8 @@
 # 前端项目脚手架
 
 ## 技术选型
-- element-ui or ant-design-vue
-- sass or less
+- element-ui
+- sass
 - jest
 - mock
 - proxy
