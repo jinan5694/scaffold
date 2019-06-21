@@ -1,12 +1,2 @@
-### 跨域相关
-切换后端服务地址有两种方式
-- 通过`vue.config.js`中的`proxy`实现。修改`.env.development.local`中的server-url
-- 修改baseURL
-
-优点：支持跨域
-
-缺点：需要重启前端服务
-
-优点：不需要重启
-
-缺点：不支持跨域
+### 覆盖scoped样式
+https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E6%B7%B1%E5%BA%A6%E4%BD%9C%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8

@@ -1,0 +1,21 @@
+{
+	"vue SFC template": {
+		"scope": "vue",
+		"prefix": "vue",
+		"body": [
+			"<template>",
+			"\t$0",
+			"</template>",
+			"<script>",
+			"export default {",
+			"",
+			"}",
+			"</script>",
+			"<style lang=\"scss\" scoped>",
+			"",
+			"</style>",
+			""
+		],
+		"description": "vue SFC template"
+	}
+}
