@@ -6,6 +6,11 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jinan5694/scaffold"
+  },
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.19.0",
     "element-ui": "^2.10.0",
