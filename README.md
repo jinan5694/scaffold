@@ -49,3 +49,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 npm config set strict-ssl false
 npm config set unsafe-perm true
 ```
+
+# 更新包版本
+### 可以使用以下命令更新项目的包到新版本，无法更新主版本
+```bash
+npm outdated
+npm update
+```
+### 如果想更新主版本，需要手动升级
+```bash
+npm i --save package-name@latest
+```
