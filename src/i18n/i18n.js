@@ -3,10 +3,12 @@ import VueI18n from 'vue-i18n'
 import messages from './langs'
 import locale from 'element-ui/lib/locale'
 
+import store from '../store'
+
 Vue.use(VueI18n)
 
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: store.state.locale,
   messages
 })
 

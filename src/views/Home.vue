@@ -1,10 +1,6 @@
 <template>
   <Container>
-    <el-button @click="toggleLocale">
-      切换语言
-    </el-button>
-    <p>{{ $t('message.hello') }}</p>
-    <el-date-picker v-model="value" />
+    <router-view />
   </Container>
 </template>
 
@@ -16,25 +12,6 @@ export default {
   name: 'Home',
   components: {
     Container
-  },
-  data () {
-    return {
-      value: null
-    }
-  },
-  created () {
-    this.query()
-  },
-  methods: {
-    toggleLocale () {
-      this.$i18n.locale = this.$i18n.locale === 'en' ? 'cn' : 'en'
-    },
-    query () {
-      const url = '/orgs/octokit/repos'
-      this.$axios.get(url).then(resp => {
-        console.log(resp.data)
-      })
-    }
   }
 }
 </script>

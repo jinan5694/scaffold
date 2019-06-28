@@ -1,20 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import KEYS from './i18n/keys'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    locale: 'zh',
+    locale: KEYS.ZH,
     isCollapse: false,
-    isStartup: false
+    isReady: false
   },
   mutations: {
     toggleCollaspse (state) {
       state.isCollapse = !state.isCollapse
     },
-    setStartup (state, status) {
-      state.isStartup = status
+    setReady (state, isReady) {
+      state.isReady = isReady
     },
     switchLocale (state, locale) {
       state.locale = locale

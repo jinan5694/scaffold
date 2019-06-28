@@ -8,9 +8,15 @@
     </div>
     <div class="toolbar">
       <div class="item">
-        <i class="el-icon-setting" />
+        <Locale />
       </div>
       <div class="item">
+        <i class="el-icon-setting" />
+      </div>
+      <div
+        class="item"
+        @click="logout"
+      >
         <i class="el-icon-switch-button" />
       </div>
     </div>
@@ -18,9 +24,13 @@
 </template>
 
 <script>
-
+import Locale from './Locale'
+import { removeToken } from '../utils/token'
 export default {
   name: 'Header',
+  components: {
+    Locale
+  },
   computed: {
     isCollapse () {
       return this.$store.state.isCollapse
@@ -32,6 +42,15 @@ export default {
   methods: {
     toggleCollaspse () {
       this.$store.commit('toggleCollaspse')
+    },
+    logout () {
+      removeToken()
+      this.$router.push({
+        name: 'login',
+        query: {
+          redirect: this.$route.path
+        }
+      })
     }
   }
 }
@@ -59,23 +78,20 @@ export default {
     }
 
     .toolbar {
-      height: 100%;
+      height: 32px;
       display: flex;
-      align-items: stretch;
 
       .item {
-        margin: 5px 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
-        text-align: center;
-        font-size: 18px;
-        color: #666;
+        padding: 0 8px;
+        // text-align: center;
+        // font-size: 18px;
+        // color: #666;
         cursor: pointer;
-
-        &:hover {
-          background-color: rgba(0, 0, 0, .1);
+        & + .item {
+          margin-left: 8px;
         }
       }
     }

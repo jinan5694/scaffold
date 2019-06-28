@@ -54,6 +54,7 @@ export default {
     height: 100%;
     .aside {
       box-shadow: 2px 0px 4px rgba(0,0,0,0.1);
+      transition: width .2s;
     }
     .top {
       box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);

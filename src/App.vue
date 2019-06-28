@@ -5,10 +5,12 @@
 </template>
 
 <script>
+import LocaleMixin from './mixins/locale'
 // 引入项目样式
 import './style/index.scss'
 
 export default {
-  name: 'App'
+  name: 'App',
+  mixins: [LocaleMixin]
 }
 </script>

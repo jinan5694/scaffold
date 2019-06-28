@@ -1,36 +1,36 @@
 <template>
   <div
     v-loading="loading"
-    class="startup"
+    class="ready"
   />
 </template>
 
 <script>
 
 export default {
-  name: 'Startup',
+  name: 'Ready',
   computed: {
     loading () {
-      return !this.$store.state.isStartup
+      return !this.$store.state.isReady
     }
   },
   mounted () {
     setTimeout(() => {
-      this.setStartup()
-      console.log(this.$store.state.isStartup)
+      this.ready()
+      console.log(this.$store.state.isReady)
       this.$router.push('/')
     }, 2000)
   },
   methods: {
-    setStartup () {
-      this.$store.commit('setStartup', true)
+    ready () {
+      this.$store.commit('setReady', true)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .startup {
+  .ready {
     height: 100%;
   }
 </style>

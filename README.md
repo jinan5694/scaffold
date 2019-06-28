@@ -10,10 +10,11 @@
 - login/logout
 - axios config
 - svg icon
-- custom theme
+- custom theme 
 - multi tab
 - layout 
 - menu
+- BEM *
 
 ## Project setup
 ```
