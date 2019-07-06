@@ -1,35 +1,37 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './views/home.vue'
 
 import { getToken } from './utils/token'
 import store from './store'
 
 Vue.use(Router)
 
-// 自动生成router
+// 路由自动注册
 const routes = []
 const files = require.context('./views', true, /\.vue$/)
-// 一下页面不能自动注册，
-// 这些路由有路径、配置顺序和层级的特殊要求
+
+// 以下页面不能自动注册，有路径、配置顺序和层级的特殊要求
 const ignore = [
-  './Login.vue',
-  './Ready.vue',
-  './Home.vue',
-  './Dashboard.vue',
-  './NotFound.vue'
+  './login.vue',
+  './ready.vue',
+  './home.vue',
+  './dashboard.vue',
+  './not-found.vue'
 ]
 files.keys().forEach(key => {
-  console.log(key)
-  // key is './foo/bar.vue'
+  // key like './foo/bar.vue'
   if (ignore.indexOf(key) !== -1) return
 
   let path = key.replace(/(\.vue$)|(\.)/g, '')
-  const title = key.replace(/(\.vue$)|(\.\/)/g, '').split('/').join('.')
+  const title = key
+    .replace(/(\.vue$)|(\.\/)/g, '')
+    .split('/')
+    .join('.')
 
   // path 别名
   // 约定目录下 main 为主文件，可以通过目录名访问
-  // /foo/main -> /foo
+  // 例如：/foo/main -> /foo
   const MAIN_KEY = '/main'
   if (path.indexOf(MAIN_KEY) > 0) {
     path = path.replace(MAIN_KEY, '')
@@ -52,7 +54,7 @@ const router = new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import('./views/Login.vue'),
+      component: () => import('./views/login.vue'),
       meta: {
         title: 'meta.login'
       }
@@ -60,7 +62,7 @@ const router = new Router({
     {
       path: '/ready',
       name: 'ready',
-      component: () => import('./views/Ready.vue'),
+      component: () => import('./views/ready.vue'),
       meta: {
         title: 'meta.ready',
         requiresAuth: true
@@ -77,7 +79,7 @@ const router = new Router({
         {
           path: '',
           name: 'dashboard',
-          component: () => import('./views/Dashboard.vue'),
+          component: () => import('./views/dashboard.vue'),
           meta: {
             title: 'meta.dashboard'
           }
@@ -87,7 +89,7 @@ const router = new Router({
         {
           path: '*',
           name: 'notFound',
-          component: () => import('./views/NotFound.vue')
+          component: () => import('./views/not-found.vue')
         }
       ]
     }
@@ -126,6 +128,10 @@ router.beforeEach((to, from, next) => {
   // }
 
   next()
+})
+
+router.afterEach((to, from) => {
+  window.document.title = `scaffold | ${to.meta.title}`
 })
 
 export default router
