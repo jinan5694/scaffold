@@ -14,7 +14,11 @@
         <Header />
       </el-header>
       <el-main>
-        <slot />
+        <CustomTransition>
+          <keep-alive>
+            <slot />
+          </keep-alive>
+        </CustomTransition>
       </el-main>
     </el-container>
   </el-container>
@@ -24,13 +28,15 @@
 import Logo from './Logo'
 import Header from './Header'
 import Menu from './Menu'
+import CustomTransition from './Transition'
 
 export default {
   name: 'Container',
   components: {
     Logo,
     Header,
-    Menu
+    Menu,
+    CustomTransition
   },
   computed: {
     asideWidth () {

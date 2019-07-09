@@ -5,8 +5,7 @@
     :collapse="isCollapse"
     :collapse-transition="false"
     class="menu"
-    @open="handleOpen"
-    @close="handleClose"
+    router
   >
     <el-submenu index="1">
       <template slot="title">
@@ -15,16 +14,19 @@
       </template>
       <el-menu-item-group>
         <span slot="title">分组一</span>
-        <el-menu-item index="1-1">
-          选项1
+        <el-menu-item index="/">
+          Home
         </el-menu-item>
-        <el-menu-item index="1-2">
-          选项2
+        <el-menu-item index="/foo">
+          foo
+        </el-menu-item>
+        <el-menu-item index="/foo/bar">
+          bar
         </el-menu-item>
       </el-menu-item-group>
-      <el-menu-item-group title="分组2">
-        <el-menu-item index="1-3">
-          选项3
+      <el-menu-item-group title="group">
+        <el-menu-item index="/play">
+          Play
         </el-menu-item>
       </el-menu-item-group>
       <el-submenu index="1-4">
