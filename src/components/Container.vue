@@ -13,7 +13,7 @@
       <el-header class="top">
         <Header />
       </el-header>
-      <el-main>
+      <el-main class="main">
         <CustomTransition>
           <keep-alive>
             <slot />
@@ -64,6 +64,9 @@ export default {
     }
     .top {
       box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);
+    }
+    .main {
+      overflow-x: hidden;
     }
   }
 </style>
