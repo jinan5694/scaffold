@@ -4,5 +4,6 @@
     "javascript",
     "javascriptreact",
     {"language": "vue", "autoFix": true}
-  ]
+  ],
+  "emmet.triggerExpansionOnTab": true
 }
