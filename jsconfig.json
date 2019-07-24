@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "moduleResolution": "classic",
     "paths": {
       "@/*": [
         "./src/*"
@@ -8,6 +9,11 @@
     },
   },
   "include": [
-    "./src/**/*",
+    "./src/**/*.js",
+    "./src/**/*.vue"
   ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
