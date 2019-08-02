@@ -25,7 +25,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .play {
-
+  border: 1px solid red;
 }
 .box {
   width: 200px;
