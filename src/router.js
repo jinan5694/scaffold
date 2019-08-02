@@ -113,19 +113,19 @@ router.beforeEach((to, from, next) => {
     return
   }
 
-  // if (isRequiresAuth && !isReady && to.path !== '/ready') {
-  //   next({
-  //     path: '/ready',
-  //     query: { redirect: to.fullPath }
-  //   })
-  //   return
-  // }
+  if (isRequiresAuth && !isReady && to.path !== '/ready') {
+    next({
+      path: '/ready',
+      query: { redirect: to.fullPath }
+    })
+    return
+  }
 
   // 已登录并且是登出页，拦截到首页
-  // if (token && to.path === '/login') {
-  //   next('/')
-  //   return
-  // }
+  if (token && to.path === '/login') {
+    next('/')
+    return
+  }
 
   next()
 })
