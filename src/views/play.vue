@@ -1,6 +1,6 @@
 <template>
   <div class="play">
-    <el-button @click="test">
+    <el-button>
       test
     </el-button>
     <div
