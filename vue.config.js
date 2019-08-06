@@ -1,3 +1,4 @@
+const path = require('path')
 const port = 8088
 
 module.exports = {
@@ -23,6 +24,16 @@ module.exports = {
         target: process.env.VUE_APP_URL,
         pathRewrite: { '^/api': '' },
         ws: false
+      }
+    }
+  },
+  css: {
+    loaderOptions: {
+      // 给 sass-loader 传递选项
+      sass: {
+        // @/ 是 src/ 的别名
+        // 所以这里假设你有 `src/variables.scss` 这个文件
+        data: `@import "~@/style/vars.scss";`
       }
     }
   }
