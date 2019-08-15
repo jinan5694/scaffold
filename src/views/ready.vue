@@ -19,7 +19,7 @@ export default {
       this.ready()
       console.log(this.$store.state.isReady)
       this.$router.push('/')
-    }, 3000)
+    }, 1000)
   },
   methods: {
     ready () {

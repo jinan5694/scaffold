@@ -12,11 +12,7 @@ module.exports = {
     'no-console': 'off',
     'no-debugger': 'off',
     'vue/max-attributes-per-line': 'off',
-    "vue/singleline-html-element-content-newline": ["error", {
-      "ignoreWhenNoAttributes": true,
-      "ignoreWhenEmpty": true,
-      "ignores": ["pre", "textarea"]
-    }],
+    'vue/singleline-html-element-content-newline': 'off',
     // add
     'vue/v-on-function-call': 'error',
     'vue/eqeqeq': 'error',
