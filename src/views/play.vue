@@ -1,5 +1,6 @@
 <template>
   <div class="play">
+    <DataTable :url="api" />
     <el-button>
       test
     </el-button>
@@ -10,10 +11,18 @@
   </div>
 </template>
 <script>
+import DataTable from '@/components/DataTable'
+
+const api = '/users/jinan5694/repos'
+
 export default {
+  components: {
+    DataTable
+  },
   data () {
     return {
-      flag: true
+      flag: true,
+      api
     }
   },
   methods: {
