@@ -1,6 +1,7 @@
 <template>
   <div class="login">
     <div class="login__wrapper">
+      <h3 class="login__title">Login</h3>
       <LoginForm />
     </div>
   </div>
@@ -25,6 +26,11 @@ export default {
     width: 300px;
     padding: 20px;
     background-color: #fff;
+  }
+
+  &__title {
+    text-align: center;
+    color: #999;
   }
 }
 

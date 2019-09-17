@@ -1,9 +1,5 @@
 <template>
   <el-form ref="loginForm" :model="loginForm" :rules="rules">
-    <el-alert
-      title="错误提示的文案2"
-      type="error"
-    />
     <el-form-item label="Account" prop="account">
       <el-input
         v-model="loginForm.account"
@@ -23,9 +19,7 @@
       <el-checkbox v-model="loginForm.checked">remember</el-checkbox>
       <el-link style="float: right;">forget password?</el-link>
     </el-form-item>
-    <el-form-item>
-      <el-button type="primary" size="medium" class="login__btn" @click="submit">Login</el-button>
-    </el-form-item>
+    <el-button type="primary" size="medium" class="login__btn" @click="submit">Login</el-button>
   </el-form>
 </template>
 <script>
@@ -52,7 +46,6 @@ export default {
   methods: {
     submit () {
       this.$refs.loginForm.validate(valid => {
-        debugger
         if (valid) {
           setToken('scaffold_token_login')
           this.$router.push('/')
