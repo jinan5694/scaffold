@@ -5,10 +5,6 @@
         {{ $t('login') }}
       </el-button>
     </div>
-    <vue-particles
-      color="#ff0000"
-      class="particles"
-    />
   </div>
 </template>
 <script>
