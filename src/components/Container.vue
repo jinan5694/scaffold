@@ -1,9 +1,6 @@
 <template>
   <el-container class="container">
-    <el-aside
-      :width="asideWidth"
-      class="aside"
-    >
+    <el-aside :width="asideWidth" class="aside">
       <Logo />
       <div class="menu">
         <Menu />

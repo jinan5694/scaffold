@@ -8,6 +8,9 @@
 <script>
 
 export default {
+  config: {
+    isManuallyRegistered: true // 手动注册
+  },
   name: 'Ready',
   computed: {
     loading () {

@@ -2,7 +2,7 @@
   <el-table />
 </template>
 <script>
-import { value, computed, watch, onMounted } from 'vue-function-api'
+import { ref, computed, watch, onMounted } from '@vue/composition-api'
 export default {
   props: {
     url: {
@@ -15,7 +15,7 @@ export default {
     }
   },
   setup (props, ctx) {
-    const loading = value(false)
+    const loading = ref(false)
     console.log(props.url)
     computed()
     watch()

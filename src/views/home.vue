@@ -9,6 +9,9 @@
 import Container from '@/components/Container.vue'
 
 export default {
+  config: {
+    isManuallyRegistered: true // 手动注册
+  },
   name: 'Home',
   components: {
     Container

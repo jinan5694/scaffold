@@ -1,13 +1,13 @@
 <template>
   <div class="login">
     <div class="login__wrapper">
-      <h3 class="login__title">Login</h3>
+      <h3 class="login__title">Login2</h3>
       <LoginForm />
     </div>
   </div>
 </template>
 <script>
-import LoginForm from './form'
+import LoginForm from '@/views/login/components/form'
 export default {
   components: {
     LoginForm

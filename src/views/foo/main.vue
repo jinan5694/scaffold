@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import { value, computed, watch, onMounted } from 'vue-function-api'
+import { ref, computed, watch, onMounted } from '@vue/composition-api'
 
 export default {
   setup () {
     // reactive state
-    const count = value(0)
+    const count = ref(0)
     // computed state
     const plusOne = computed(() => count.value + 1)
     // method

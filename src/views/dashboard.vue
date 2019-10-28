@@ -12,6 +12,9 @@
 </template>
 <script>
 export default {
+  config: {
+    isManuallyRegistered: true // 手动注册
+  },
   name: 'Dashboard',
   data () {
     return {
