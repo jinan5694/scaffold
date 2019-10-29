@@ -4,7 +4,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "@vue/composition-api": "^0.3.2",
@@ -30,7 +32,8 @@
     "lint-staged": "^9.4.2",
     "sass": "^1.23.1",
     "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vuepress": "^1.2.0"
   },
   "license": "MIT",
   "repository": {
