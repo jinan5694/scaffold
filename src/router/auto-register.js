@@ -25,7 +25,7 @@ files.keys().forEach(filePath => {
   autoRegisteredRoutes.push({
     path: routePath,
     component: component,
-    meta: config.meta
+    meta: config.meta || {}
   })
 })
 
