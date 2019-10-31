@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/scaffold/',
+  // base: '/scaffold/',
   title: 'Hello Scaffold',
   description: 'power for easy work',
   themeConfig: {
