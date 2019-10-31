@@ -1,7 +1,7 @@
 module.exports = {
   base: '/scaffold/',
-  title: 'Hello Scaffold',
-  description: 'power for easy work',
+  title: 'Vue Scaffold',
+  description: '让生活更简单',
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
