@@ -11,6 +11,7 @@ export default [
     children: [
       {
         path: '/system/user',
+        icon: 's-icon-location-fill',
         text: '用户'
       },
       {
