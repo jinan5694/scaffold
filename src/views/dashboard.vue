@@ -8,6 +8,8 @@
     >
       {{ $t('query') }}
     </el-button>
+    <i class="iconfont s-icon-cog-fill" />
+    <i class="el-icon-s-tools" />
   </div>
 </template>
 <script>

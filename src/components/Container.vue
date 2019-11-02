@@ -3,7 +3,8 @@
     <el-aside :width="asideWidth" class="aside">
       <Logo />
       <div class="menu">
-        <Menu />
+        <Menu v-if="false" />
+        <NavMenu />
       </div>
     </el-aside>
     <el-container>
@@ -26,6 +27,7 @@ import Logo from './Logo'
 import Header from './Header'
 import Menu from './Menu'
 import CustomTransition from './Transition'
+import NavMenu from '@/components/menu/index'
 
 export default {
   name: 'Container',
@@ -33,6 +35,7 @@ export default {
     Logo,
     Header,
     Menu,
+    NavMenu,
     CustomTransition
   },
   computed: {
