@@ -9,23 +9,11 @@ export function beforeEach (to, from, next) {
   const isRequiresAuth = to.matched.some(record => record.meta.requiresAuth)
   // 是否已登陆
   const token = getToken()
-  // 是否准备完毕
-  const isReady = store.state.isReady
 
   // 需要登录但未登录，拦截到登录页
   if (isRequiresAuth && !token) {
-    next({
-      path: '/login',
-      query: { redirect: to.fullPath }
-    })
-    return
-  }
-
-  if (isRequiresAuth && !isReady && to.path !== '/ready') {
-    next({
-      path: '/ready',
-      query: { redirect: to.fullPath }
-    })
+    store.app.commit('setInterceptedPath', to.fullPath)
+    next('/login')
     return
   }
 

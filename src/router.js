@@ -97,6 +97,7 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  debugger
   // 是否需要登录后访问
   const isRequiresAuth = to.matched.some(record => record.meta.requiresAuth)
   // 是否已登陆

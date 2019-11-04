@@ -1,4 +1,4 @@
-const port = 8088
+const port = 8188 // 8101 ~8200
 
 module.exports = {
   // 放置生成的静态资源（js、css、img、fonts）的目录
@@ -16,7 +16,7 @@ module.exports = {
       errors: true
     },
     port: port,
-    public: `localhost:${port}`,
+    // public: `localhost:${port}`,
     proxy: {
       '/api': {
         changeOrigin: true,

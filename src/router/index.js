@@ -5,8 +5,6 @@ import { beforeEach, afterEach } from '@/router/guards'
 
 import Home from '@/views/home.vue'
 
-console.log(JSON.stringify(autoRegisteredRoutes, null, 2))
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -15,16 +13,7 @@ const routes = [
     name: 'login',
     component: () => import('@/views/login/login.vue'),
     meta: {
-      title: 'meta.login'
-    }
-  },
-  {
-    path: '/ready',
-    name: 'ready',
-    component: () => import('@/views/ready.vue'),
-    meta: {
-      title: 'meta.ready',
-      requiresAuth: true
+      title: 'login'
     }
   },
   {
@@ -58,9 +47,10 @@ const router = new VueRouter({
   scrollBehavior () {
     return { x: 0, y: 0 }
   },
-  routes,
-  beforeEach,
-  afterEach
+  routes
 })
+
+router.beforeEach(beforeEach)
+router.afterEach(afterEach)
 
 export default router
