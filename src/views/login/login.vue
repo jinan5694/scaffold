@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login__wrapper">
-      <h3 class="login__title">Login2</h3>
+      <h3 class="login__title">{{ $t('login.login') }}</h3>
       <LoginForm />
     </div>
   </div>
@@ -9,6 +9,9 @@
 <script>
 import LoginForm from '@/views/login/components/form'
 export default {
+  config: {
+    isManuallyRegistered: true
+  },
   components: {
     LoginForm
   }

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Element from 'element-ui'
 import '@/style/element-variables.scss'
 
-import i18n from '../i18n/i18n'
+import i18n from '@/i18n'
 
 Vue.use(Element, {
   size: 'mini',

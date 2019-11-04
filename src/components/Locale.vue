@@ -7,20 +7,20 @@
   </el-button>
 </template>
 <script>
-import KEYS from '../i18n/keys'
+import LOCALE_CODES from '../i18n/locale-codes'
 export default {
   name: 'Locale',
   computed: {
     locale () {
-      return this.$store.state.locale
+      return this.$store.state.app.locale
     },
     btnText () {
-      return this.locale === KEYS.ZH ? 'English' : '中文'
+      return this.locale === LOCALE_CODES.ZH ? 'English' : '中文'
     }
   },
   methods: {
     toggleLocale () {
-      this.$store.commit('switchLocale', this.locale === KEYS.EN ? KEYS.ZH : KEYS.EN)
+      this.$store.commit('app/toggleLocale')
     }
   }
 }

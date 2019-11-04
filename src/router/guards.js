@@ -12,15 +12,13 @@ export function beforeEach (to, from, next) {
 
   // 需要登录但未登录，拦截到登录页
   if (isRequiresAuth && !token) {
-    store.app.commit('setInterceptedPath', to.fullPath)
+    store.commit('app/setInterceptedPath', to.fullPath)
     next('/login')
-    return
   }
 
   // 已登录并且是登出页，拦截到首页
   if (token && to.path === '/login') {
     next('/')
-    return
   }
 
   next()

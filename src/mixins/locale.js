@@ -2,7 +2,7 @@ export default {
   name: 'Locale',
   computed: {
     locale () {
-      return this.$store.state.locale
+      return this.$store.state.app.locale
     }
   },
   watch: {

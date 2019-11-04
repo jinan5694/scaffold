@@ -1,5 +1,6 @@
 <template>
   <div class="dashboard">
+    <p>{{ $store.state.app.locale }}</p>
     <p>{{ $t('message.hello') }}</p>
     <el-date-picker v-model="value" />
     <el-button

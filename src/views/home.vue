@@ -12,10 +12,7 @@ import ReadyMixin from '@/mixins/ready'
 
 export default {
   config: {
-    isManuallyRegistered: true, // 手动注册
-    meta: {
-      requiresAuth: true
-    }
+    isManuallyRegistered: true // 手动注册
   },
   name: 'Home',
   components: {
