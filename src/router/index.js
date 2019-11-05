@@ -13,14 +13,13 @@ const routes = [
     name: 'login',
     component: () => import('@/views/login/login.vue'),
     meta: {
-      title: 'login'
+      title: { i18n: 'route.login' }
     }
   },
   {
     path: '/',
     component: Home,
     meta: {
-      title: 'meta.home',
       requiresAuth: true
     },
     children: [
@@ -29,7 +28,7 @@ const routes = [
         name: 'dashboard',
         component: () => import('@/views/dashboard.vue'),
         meta: {
-          title: 'meta.dashboard'
+          title: { i18n: 'route.dashboard' }
         }
       },
       // 引入自动注册的配置
@@ -37,7 +36,10 @@ const routes = [
       {
         path: '*',
         name: 'notFound',
-        component: () => import('@/views/not-found.vue')
+        component: () => import('@/views/not-found.vue'),
+        meta: {
+          title: { i18n: 'route.notFound' }
+        }
       }
     ]
   }

@@ -9,6 +9,11 @@ export default {
     accountRequired: 'Account is required',
     passwordRequired: 'Password is required'
   },
+  route: {
+    login: 'Login',
+    dashboard: 'Dashboard',
+    notFound: 'Not Found'
+  },
   query: 'Query',
   message: {
     hello: 'hello, world',

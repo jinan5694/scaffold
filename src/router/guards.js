@@ -3,6 +3,7 @@
  */
 import store from '@/store'
 import { getToken } from '@/utils/token'
+import { t } from '@/utils/i18n'
 
 export function beforeEach (to, from, next) {
   // 是否需要登录后访问
@@ -27,5 +28,5 @@ export function beforeEach (to, from, next) {
 }
 
 export function afterEach (to, from) {
-  window.document.title = `scaffold | ${to.meta.title}`
+  window.document.title = `scaffold | ${t(to.meta.title)}`
 }

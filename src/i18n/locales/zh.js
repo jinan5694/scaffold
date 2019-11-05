@@ -11,6 +11,11 @@ export default {
     accountRequired: '请输入账号',
     passwordRequired: '请输入密码'
   },
+  route: {
+    login: '登录',
+    dashboard: '首页',
+    notFound: '404'
+  },
   query: '查询',
   message: {
     hello: '你好，世界',
