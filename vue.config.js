@@ -21,7 +21,7 @@ module.exports = {
       '/api': {
         changeOrigin: true,
         target: process.env.VUE_APP_URL,
-        pathRewrite: { '^/api': '' },
+        // pathRewrite: { '^/api': '' },
         ws: false
       }
     }

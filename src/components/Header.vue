@@ -45,12 +45,7 @@ export default {
     },
     logout () {
       removeToken()
-      this.$router.push({
-        name: 'login',
-        query: {
-          redirect: this.$route.path
-        }
-      })
+      this.$router.push('/login')
     }
   }
 }

@@ -14,11 +14,13 @@ export function beforeEach (to, from, next) {
   if (isRequiresAuth && !token) {
     store.commit('app/setInterceptedPath', to.fullPath)
     next('/login')
+    return
   }
 
   // 已登录并且是登出页，拦截到首页
   if (token && to.path === '/login') {
     next('/')
+    return
   }
 
   next()

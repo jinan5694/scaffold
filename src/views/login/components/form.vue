@@ -1,7 +1,8 @@
 <template>
-  <el-form ref="loginForm" :model="loginForm" :rules="rules">
+  <el-form ref="loginForm" :model="loginForm" :rules="rules" @keydown.enter.native="handleEnter">
     <el-form-item :label="$t('login.account')" prop="account">
       <el-input
+        ref="account"
         v-model="loginForm.account"
         size="medium"
         :placeholder="$t('login.account')"
@@ -19,16 +20,17 @@
       <el-checkbox v-model="loginForm.checked">{{ $t('login.remember') }}</el-checkbox>
       <el-link style="float: right;">{{ $t('login.forget') }}</el-link>
     </el-form-item>
-    <el-button type="primary" size="medium" class="login__btn" @click="submit">{{ $t('login.login') }}</el-button>
+    <el-button type="primary" size="medium" class="login__btn" :loading="loading" @click="submit">{{ $t('login.login') }}</el-button>
   </el-form>
 </template>
 <script>
 import qs from 'qs'
-// import { setToken } from '@/utils/token'
+import { setToken } from '@/utils/token'
 export default {
   name: 'LoginForm',
   data () {
     return {
+      loading: false,
       loginForm: {
         account: null,
         password: null,
@@ -44,17 +46,19 @@ export default {
       }
     }
   },
+  mounted () {
+    this.$refs.account.focus()
+  },
   methods: {
     submit () {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.login()
-          // setToken('scaffold_token_login')
-          // this.$router.push('/')
         }
       })
     },
     login () {
+      this.loading = true
       const url = '/auth/oauth/token'
       const params = {
         username: this.loginForm.account,
@@ -66,8 +70,12 @@ export default {
       }
       const query = qs.stringify(params)
       this.$axios.post(url + '?' + query).then(resp => {
-
+        setToken(resp.data.access_token)
+        this.$router.push('/')
       })
+    },
+    handleEnter () {
+      this.login()
     }
   }
 }
