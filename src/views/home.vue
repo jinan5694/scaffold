@@ -18,6 +18,11 @@ export default {
   components: {
     Container
   },
-  mixins: [ ReadyMixin ]
+  mixins: [ ReadyMixin ],
+  data () {
+    return {
+      isReady: false
+    }
+  }
 }
 </script>

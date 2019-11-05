@@ -54,3 +54,5 @@ Vue.use({
     Object.defineProperty(Vue.prototype, '$axios', { value: instance })
   }
 })
+
+export default instance
