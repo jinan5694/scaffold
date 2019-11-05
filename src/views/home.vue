@@ -2,13 +2,14 @@
   <Container v-if="isReady">
     <router-view />
   </Container>
-  <div v-else>ready</div>
+  <Ready v-else :status="status" />
 </template>
 
 <script>
 // @ is an alias to /src
-import Container from '@/components/Container.vue'
-import ReadyMixin from '@/mixins/ready'
+import Ready from '@/components/ready'
+import Container from '@/components/container.vue'
+import useReady from '@/components/composables/use-ready'
 
 export default {
   config: {
@@ -16,13 +17,12 @@ export default {
   },
   name: 'Home',
   components: {
+    Ready,
     Container
   },
-  mixins: [ ReadyMixin ],
-  data () {
-    return {
-      isReady: false
-    }
+  setup () {
+    const { status, isReady } = useReady()
+    return { status, isReady }
   }
 }
 </script>

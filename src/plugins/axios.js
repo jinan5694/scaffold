@@ -16,7 +16,8 @@ const instance = axios.create({
 
 instance.interceptors.request.use(config => {
   // token的处理
-  config.headers.token = getToken()
+  const token = getToken()
+  if (token) config.headers.Authorization = `Bearer ${token}`
   // 参数序列化
   if (config.method === 'get') {
 

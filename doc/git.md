@@ -14,3 +14,8 @@ git仓库对大小写不敏感。例如，Home.vue 修改为 home.vue ，git识�
 当需要修改文件大小写的时候，可以使用上面的命令，这样就减少了重命名的繁琐。
 
 特此记录下来，以备后患。
+
+# 更新
+```bash
+git config core.ignorecase false
+```

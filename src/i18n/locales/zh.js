@@ -11,6 +11,11 @@ export default {
     accountRequired: '请输入账号',
     passwordRequired: '请输入密码'
   },
+  ready: {
+    loading: '系统初始化',
+    text: '好像哪里出了问题',
+    reload: '在给一次机会'
+  },
   route: {
     login: '登录',
     dashboard: '首页',
