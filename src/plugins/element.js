@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Element from 'element-ui'
-import '@/style/element-variables.scss'
+import '@/styles/element-variables.scss'
 
 import i18n from '@/i18n'
 

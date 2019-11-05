@@ -32,7 +32,7 @@ module.exports = {
       scss: {
         // @/ 是 src/ 的别名
         // 所以这里假设你有 `src/variables.scss` 这个文件
-        prependData: `@import "~@/style/vars.scss";`
+        prependData: `@import "~@/styles/vars.scss";`
       }
     }
   }

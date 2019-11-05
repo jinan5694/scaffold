@@ -24,7 +24,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../style/vars.scss';
   .logo {
     height: $header-height;
     flex: 1;

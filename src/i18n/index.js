@@ -5,6 +5,9 @@ import locale from 'element-ui/lib/locale'
 import enLocale from 'element-ui/lib/locale/lang/en'
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
+// import LOCALE_CODES from '@/i18n/locale-codes'
+import { getLocale } from '@/i18n/utils'
+
 import en from '@/i18n/locales/en'
 import zh from '@/i18n/locales/zh'
 
@@ -16,7 +19,7 @@ const messages = {
 }
 
 const i18n = new VueI18n({
-  locale: 'zh',
+  locale: getLocale(),
   messages
 })
 

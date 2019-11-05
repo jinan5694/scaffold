@@ -7,12 +7,14 @@
   </el-button>
 </template>
 <script>
-import LOCALE_CODES from '../i18n/locale-codes'
+import LOCALE_CODES from '@/i18n/locale-codes'
+import { getLocale, setLocale } from '@/i18n/utils'
+
 export default {
   name: 'Locale',
   computed: {
     locale () {
-      return this.$store.state.app.locale
+      return getLocale()
     },
     btnText () {
       return this.locale === LOCALE_CODES.ZH ? 'English' : '中文'
@@ -20,7 +22,8 @@ export default {
   },
   methods: {
     toggleLocale () {
-      this.$store.commit('app/toggleLocale')
+      setLocale(this.locale === LOCALE_CODES.ZH ? LOCALE_CODES.EN : LOCALE_CODES.ZH)
+      window.location.reload()
     }
   }
 }
