@@ -1,22 +1,24 @@
 <template>
   <div class="logo">
     <div class="bg" />
-    <div
-      v-show="!isCollapse"
-      class="label"
-    >
-      Scaffold
+    <div v-show="!isCollapse" class="label">
+      {{ name }}
     </div>
   </div>
 </template>
 
 <script>
-
+import { name } from '@/config'
 export default {
   name: 'Logo',
+  data () {
+    return {
+      name: name
+    }
+  },
   computed: {
     isCollapse () {
-      return this.$store.state.isCollapse
+      return this.$store.state.app.isCollapse
     }
   }
 

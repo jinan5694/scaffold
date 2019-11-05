@@ -1,7 +1,7 @@
 import LOCALE_CODES from '@/i18n/locale-codes'
 
 // 项目名称
-const name = 'Saffold'
+const name = '脚手架'
 // 基础URL前缀
 let baseUrl = '/api'
 if (localStorage.baseUrl) {
