@@ -1,6 +1,10 @@
 $header-height: 60px;
 $color-primary: blue;
 
+$color-aside-bg: #282c34;
+$color-header-bg: #bbe6d6;
+
 :export {
-  colorPrimary: $color-primary
+  colorPrimary: $color-primary;
+  colorAsideBg: $color-aside-bg;
 }

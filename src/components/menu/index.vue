@@ -1,20 +1,24 @@
 <script>
-import menu from './data'
+import { colorAsideBg } from '@/styles/vars.scss'
 export default {
   data () {
     return {
-      isCollapse: false
+      colorAsideBg: colorAsideBg
+      // isCollapse: false
     }
   },
   computed: {
     active () {
       return this.$route.fullPath
+    },
+    isCollapse () {
+      return this.$store.state.app.isCollapse
+    },
+    menus () {
+      return this.$store.getters.menus
     }
   },
   methods: {
-    toggleCollaspse () {
-      this.isCollapse = !this.isCollapse
-    },
     // render about
     getItem (item) {
       if (item.children && item.children.length) {
@@ -58,10 +62,10 @@ export default {
       <el-menu
         collapse={ this.isCollapse }
         defaultActive={ this.active }
-        backgroundColor="#364050"
+        backgroundColor={ colorAsideBg }
         collapseTransition={false}
         router>
-        { menu.map(item => this.getItem(item)) }
+        { this.menus.map(item => this.getItem(item)) }
       </el-menu>
     )
   }
@@ -93,8 +97,9 @@ export default {
   &.is-active {
     .title,
     .icon {
-      // color: @color-primary;
+      color: #fff;
     }
   }
 }
+
 </style>

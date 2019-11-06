@@ -11,6 +11,7 @@
     </el-button>
     <i class="iconfont s-icon-cog-fill" />
     <i class="el-icon-s-tools" />
+    <pre>{{ $store.getters.menus }}</pre>
   </div>
 </template>
 <script>

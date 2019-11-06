@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import Locale from './Locale'
-import { removeToken } from '../utils/token'
+import Locale from './locale'
+import { removeToken } from '@/utils/token'
 export default {
   name: 'Header',
   components: {
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     toggleCollaspse () {
-      this.$store.commit('toggleCollaspse')
+      this.$store.commit('app/toggleCollaspse')
     },
     logout () {
       removeToken()

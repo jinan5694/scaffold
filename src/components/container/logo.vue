@@ -30,13 +30,14 @@ export default {
     height: $header-height;
     flex: 1;
     display: flex;
+    background-color: $color-header-bg;
 
     .bg {
       box-sizing: border-box;
       margin: 8px;
       flex: none;
       width: 48px;
-      background: url('../assets/logo.png') no-repeat left center;
+      background: url('../../assets/logo.png') no-repeat left center;
       background-size: contain;
     }
     .label {

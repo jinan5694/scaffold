@@ -8,7 +8,7 @@
 <script>
 // @ is an alias to /src
 import Ready from '@/components/ready'
-import Container from '@/components/container.vue'
+import Container from '@/components/container'
 import useReady from '@/components/composables/use-ready'
 
 export default {

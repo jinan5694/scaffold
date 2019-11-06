@@ -3,7 +3,6 @@
     <el-aside :width="asideWidth" class="aside">
       <Logo />
       <div class="menu">
-        <Menu v-if="false" />
         <NavMenu />
       </div>
     </el-aside>
@@ -23,10 +22,9 @@
 </template>
 
 <script>
-import Logo from '@/components/logo'
-import Header from './Header'
-import Menu from './Menu'
-import CustomTransition from './Transition'
+import Logo from './logo'
+import Header from './header'
+import CustomTransition from './transition'
 import NavMenu from '@/components/menu/index'
 
 export default {
@@ -34,7 +32,6 @@ export default {
   components: {
     Logo,
     Header,
-    Menu,
     NavMenu,
     CustomTransition
   },
@@ -44,12 +41,7 @@ export default {
       return `${this.isCollapse ? 64 : 210}px`
     },
     isCollapse () {
-      return this.$store.state.isCollapse
-    }
-  },
-  methods: {
-    toggleCollaspse () {
-      this.$store.commit('toggleCollaspse')
+      return this.$store.state.app.isCollapse
     }
   }
 }
@@ -59,11 +51,18 @@ export default {
   .container {
     height: 100%;
     .aside {
-      box-shadow: 2px 0px 4px rgba(0,0,0,0.1);
+      background-color: $color-aside-bg;
+      // box-shadow: 2px 0px 4px rgba(0,0,0,0.1);
       transition: width .2s;
     }
+    .menu {
+      >>> .el-menu {
+        border-right: none;
+      }
+    }
     .top {
-      box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);
+      background-color: $color-header-bg;
+      // box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);
     }
     .main {
       overflow-x: hidden;

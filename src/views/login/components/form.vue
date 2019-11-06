@@ -69,8 +69,8 @@ export default {
         client_secret: 'web'
       }
       const query = qs.stringify(params)
-      this.$axios.post(url + '?' + query).then(resp => {
-        setToken(resp.data.access_token)
+      this.$axios.post(url + '?' + query).then(data => {
+        setToken(data.access_token)
         this.$router.push('/')
       })
     },

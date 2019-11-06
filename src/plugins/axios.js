@@ -2,14 +2,11 @@ import Vue from 'vue'
 import axios from 'axios'
 // import qs from 'qs'
 import { Message } from 'element-ui'
-// import router from '../router.js'
-
+import { baseURL } from '@/config'
 import { getToken } from '@/utils/token'
 
-import baseUrl from '../config/url'
-
 const instance = axios.create({
-  baseURL: baseUrl,
+  baseURL: baseURL,
   timeout: 5000,
   responseType: 'json'
 })
@@ -19,13 +16,10 @@ instance.interceptors.request.use(config => {
   const token = getToken()
   if (token) config.headers.Authorization = `Bearer ${token}`
   // 参数序列化
-  if (config.method === 'get') {
-
-  }
+  if (config.method === 'get') {}
 
   return config
-},
-error => {
+}, error => {
   Message({
     showClose: true,
     message: error,
@@ -33,12 +27,11 @@ error => {
   })
 
   return Promise.reject(error)
-}
-)
-instance.interceptors.response.use(config => {
-  return config
-},
-error => {
+})
+
+instance.interceptors.response.use(resp => {
+  return resp.data
+}, error => {
   Message({
     showClose: true,
     message: error,
@@ -46,8 +39,7 @@ error => {
   })
 
   return Promise.reject(error)
-}
-)
+})
 
 Vue.use({
   install (Vue) {
