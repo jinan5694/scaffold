@@ -13,7 +13,7 @@ export default function useReady () {
   console.log(status.value)
 
   const isReady = computed(() => {
-    return status.value !== STATUS.FAILED
+    return status.value === STATUS.SUCCESS
   })
 
   async function queryInitData () {
@@ -21,7 +21,9 @@ export default function useReady () {
     try {
       const data = await axios.post(url)
       store.commit('setInitData', data.data)
-      status.value = STATUS.SUCCESS
+      setTimeout(() => {
+        status.value = STATUS.SUCCESS
+      }, 3000)
     } catch (error) {
       status.value = STATUS.FAILED
       throw new Error(error)
