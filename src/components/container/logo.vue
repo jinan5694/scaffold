@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div class="logo" @click="handleClick">
     <div class="bg" />
     <div v-show="!isCollapse" class="label">
       {{ name }}
@@ -20,6 +20,11 @@ export default {
     isCollapse () {
       return this.$store.state.app.isCollapse
     }
+  },
+  methods: {
+    handleClick () {
+      this.$router.push('/')
+    }
   }
 
 }
@@ -31,12 +36,13 @@ export default {
     flex: 1;
     display: flex;
     background-color: $color-header-bg;
+    cursor: pointer;
 
     .bg {
       box-sizing: border-box;
-      margin: 8px;
+      margin: 15px;
       flex: none;
-      width: 48px;
+      width: 30px;
       background: url('../../assets/logo.png') no-repeat left center;
       background-size: contain;
     }
