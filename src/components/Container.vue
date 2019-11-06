@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Logo from './Logo'
+import Logo from '@/components/logo'
 import Header from './Header'
 import Menu from './Menu'
 import CustomTransition from './Transition'
