@@ -25,7 +25,8 @@
 
 <script>
 import Locale from './locale'
-import { removeToken } from '@/utils/token'
+import API from '@/api'
+
 export default {
   name: 'Header',
   components: {
@@ -44,8 +45,10 @@ export default {
       this.$store.commit('app/toggleCollaspse')
     },
     logout () {
-      removeToken()
-      this.$router.push('/login')
+      this.$axios.post(API.logout).then(() => {
+        this.$store.commit('clear')
+        this.$router.push('/login')
+      })
     }
   }
 }

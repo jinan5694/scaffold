@@ -1,6 +1,7 @@
 import { ref, onMounted, computed } from '@vue/composition-api'
 import store from '@/store'
 import axios from '@/plugins/axios'
+import API from '@/api'
 
 export const STATUS = {
   PROCESSING: 'processing',
@@ -10,23 +11,18 @@ export const STATUS = {
 
 export default function useReady () {
   const status = ref(STATUS.PROCESSING)
-  console.log(status.value)
 
   const isReady = computed(() => {
     return status.value === STATUS.SUCCESS
   })
 
   async function queryInitData () {
-    const url = '/system/initData'
     try {
-      const data = await axios.post(url)
+      const data = await axios.post(API.initData)
       store.commit('setInitData', data.data)
-      setTimeout(() => {
-        status.value = STATUS.SUCCESS
-      }, 3000)
+      status.value = STATUS.SUCCESS
     } catch (error) {
       status.value = STATUS.FAILED
-      throw new Error(error)
     }
   }
 

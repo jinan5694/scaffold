@@ -26,14 +26,16 @@
 <script>
 import qs from 'qs'
 import { setToken } from '@/utils/token'
+import api from '@/api'
+
 export default {
   name: 'LoginForm',
   data () {
     return {
       loading: false,
       loginForm: {
-        account: null,
-        password: null,
+        account: 'system',
+        password: 'system',
         checked: true
       }
     }
@@ -59,7 +61,6 @@ export default {
     },
     login () {
       this.loading = true
-      const url = '/auth/oauth/token'
       const params = {
         username: this.loginForm.account,
         password: this.loginForm.password,
@@ -69,7 +70,7 @@ export default {
         client_secret: 'web'
       }
       const query = qs.stringify(params)
-      this.$axios.post(url + '?' + query).then(data => {
+      this.$axios.post(api.login + '?' + query).then(data => {
         setToken(data.access_token)
         this.$router.push('/')
       })

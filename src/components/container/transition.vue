@@ -20,9 +20,6 @@ export default {
       const fromDepth = from.path.split('/').length
       this.name = toDepth < fromDepth ? 'right' : 'left'
     }
-  },
-  created () {
-    console.log('created')
   }
 }
 </script>

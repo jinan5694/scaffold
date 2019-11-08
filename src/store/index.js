@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import app from './modules/app'
+import { removeToken } from '@/utils/token'
 
 Vue.use(Vuex)
 
@@ -19,6 +20,11 @@ export default new Vuex.Store({
   mutations: {
     setInitData (state, data) {
       state.initData = data
+    },
+    clear (state) {
+      // 重置用户相关的所有数据，包括store和localStorage
+      state.initData = null
+      removeToken()
     }
   },
   actions: {
