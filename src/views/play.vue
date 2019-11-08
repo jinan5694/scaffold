@@ -34,7 +34,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .play {
-  border: 1px solid $color-primary;
+  border: 1px solid $theme-color-primary;
 }
 .box {
   width: 200px;

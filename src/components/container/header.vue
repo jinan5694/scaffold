@@ -44,11 +44,10 @@ export default {
     toggleCollaspse () {
       this.$store.commit('app/toggleCollaspse')
     },
-    logout () {
-      this.$axios.post(API.logout).then(() => {
-        this.$store.commit('clear')
-        this.$router.push('/login')
-      })
+    async logout () {
+      await this.$axios.post(API.logout)
+      this.$store.commit('clear')
+      this.$router.push('/login')
     }
   }
 }

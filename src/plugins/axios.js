@@ -41,23 +41,23 @@ instance.interceptors.response.use(
   config => {
     return config.data
   },
-  ({ response, message, stack }) => {
-    switch (response.status) {
+  error => {
+    switch (error.response.status) {
       case 401:
       // token失效，登出
-        console.error(`[app exception] ${message}${stack}`)
+        console.error(`[app exception] ${error.message}${error.stack}`)
         store.commit('clear')
         router.push('/login')
         break
       case 500:
       // 服务异常
-        Message.error(message)
-        console.error(stack)
+        Message.error(error.message)
+        console.error(error.stack)
         break
       default:
-        Message.error(message)
+        Message.error(error.message)
     }
-    return Promise.reject(response.data)
+    return Promise.reject(error.response)
   }
 )
 

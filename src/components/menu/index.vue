@@ -62,7 +62,7 @@ export default {
       <el-menu
         collapse={ this.isCollapse }
         defaultActive={ this.active }
-        backgroundColor={ colorAsideBg }
+        backgroundColor={ '#fff' }
         collapseTransition={false}
         router>
         { this.menus.map(item => this.getItem(item)) }
@@ -73,12 +73,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$-font-color: #333;
 .title {
   height: 100%;
   display: inline-flex;
   align-items: center;
   font-size: 14px;
-  color: #fff;
+  color: $-font-color;
   margin-left: 8px;
 }
 .icon {
@@ -86,18 +87,18 @@ export default {
   vertical-align: middle;
   width: 24px;
   text-align: center;
-  color: #fff;
+  color: $-font-color;
 }
 // /deep/ .el-submenu__title i,
 // /deep/ .el-menu-item i {
-//   color: #fff;
+//   color: $-font-color;
 // }
 
 .el-menu-item {
   &.is-active {
     .title,
     .icon {
-      color: #fff;
+      color: $-font-color;
     }
   }
 }

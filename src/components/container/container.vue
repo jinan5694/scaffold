@@ -1,16 +1,16 @@
 <template>
   <el-container class="container">
-    <el-aside :width="asideWidth" class="aside">
+    <el-aside :width="asideWidth" class="container__aside">
       <Logo />
       <div class="menu">
         <NavMenu />
       </div>
     </el-aside>
     <el-container>
-      <el-header class="top">
+      <el-header class="container__header">
         <Header />
       </el-header>
-      <el-main class="main">
+      <el-main class="container__main">
         <CustomTransition>
           <keep-alive>
             <slot />
@@ -50,21 +50,23 @@ export default {
 <style lang="scss" scoped>
   .container {
     height: 100%;
-    .aside {
-      background-color: $color-aside-bg;
-      // box-shadow: 2px 0px 4px rgba(0,0,0,0.1);
+
+    &__aside {
       transition: width .2s;
     }
-    .menu {
+
+    &__menu {
       >>> .el-menu {
         border-right: none;
       }
     }
-    .top {
-      background-color: $color-header-bg;
+
+    &__header {
+      background-color: $theme-color-primary;
       // box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);
     }
-    .main {
+
+    &__main {
       overflow-x: hidden;
     }
   }
