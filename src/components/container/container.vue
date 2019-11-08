@@ -2,7 +2,7 @@
   <el-container class="container">
     <el-aside :width="asideWidth" class="container__aside">
       <Logo />
-      <div class="menu">
+      <div class="container__menu">
         <NavMenu />
       </div>
     </el-aside>
@@ -52,13 +52,12 @@ export default {
     height: 100%;
 
     &__aside {
+      border-right: 1px solid $color-border;
       transition: width .2s;
     }
 
     &__menu {
-      >>> .el-menu {
-        border-right: none;
-      }
+      margin: 8px 0;
     }
 
     &__header {
@@ -70,4 +69,5 @@ export default {
       overflow-x: hidden;
     }
   }
+
 </style>

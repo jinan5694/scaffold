@@ -1,10 +1,12 @@
 <script>
-import { colorAsideBg } from '@/styles/vars.scss'
+import menus from './data'
+import { colorPrimary, colorBgNav } from '@/styles/vars.scss'
 export default {
   data () {
     return {
-      colorAsideBg: colorAsideBg
-      // isCollapse: false
+      menus: menus,
+      colorPrimary: colorPrimary,
+      colorBgNav: colorBgNav
     }
   },
   computed: {
@@ -13,10 +15,10 @@ export default {
     },
     isCollapse () {
       return this.$store.state.app.isCollapse
-    },
-    menus () {
-      return this.$store.getters.menus
     }
+    // menus () {
+    //   return this.$store.getters.menus
+    // }
   },
   methods: {
     // render about
@@ -62,7 +64,9 @@ export default {
       <el-menu
         collapse={ this.isCollapse }
         defaultActive={ this.active }
-        backgroundColor={ '#fff' }
+        backgroundColor={ this.colorBgNav }
+        textColor={ '#333' }
+        activeTextColor={ this.colorPrimary }
         collapseTransition={false}
         router>
         { this.menus.map(item => this.getItem(item)) }
@@ -79,7 +83,7 @@ $-font-color: #333;
   display: inline-flex;
   align-items: center;
   font-size: 14px;
-  color: $-font-color;
+  // color: $-font-color;
   margin-left: 8px;
 }
 .icon {
@@ -87,7 +91,7 @@ $-font-color: #333;
   vertical-align: middle;
   width: 24px;
   text-align: center;
-  color: $-font-color;
+  // color: $-font-color;
 }
 // /deep/ .el-submenu__title i,
 // /deep/ .el-menu-item i {
@@ -98,7 +102,7 @@ $-font-color: #333;
   &.is-active {
     .title,
     .icon {
-      color: $-font-color;
+      // color: $-font-color;
     }
   }
 }

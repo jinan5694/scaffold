@@ -35,7 +35,7 @@ export default {
     height: $header-height;
     flex: 1;
     display: flex;
-    background-color: $theme-color-primary;
+    background-color: #fff;
     cursor: pointer;
 
     .bg {
