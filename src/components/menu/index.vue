@@ -1,12 +1,19 @@
 <script>
 import menus from './data'
-import { colorPrimary, colorBgNav } from '@/styles/vars.scss'
+import {
+  colorPrimary,
+  colorBgNav,
+  colorNav
+} from '@/styles/vars.scss'
 export default {
   data () {
     return {
       menus: menus,
-      colorPrimary: colorPrimary,
-      colorBgNav: colorBgNav
+      colors: {
+        colorPrimary: colorPrimary,
+        colorBgNav: colorBgNav,
+        colorNav: colorNav
+      }
     }
   },
   computed: {
@@ -64,9 +71,9 @@ export default {
       <el-menu
         collapse={ this.isCollapse }
         defaultActive={ this.active }
-        backgroundColor={ this.colorBgNav }
-        textColor={ '#333' }
-        activeTextColor={ this.colorPrimary }
+        backgroundColor={ this.colors.colorBgNav }
+        textColor={ this.colors.colorNav }
+        activeTextColor={ '#fe8a7d' }
         collapseTransition={false}
         router>
         { this.menus.map(item => this.getItem(item)) }

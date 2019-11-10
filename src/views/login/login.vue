@@ -20,15 +20,16 @@ export default {
 <style lang="scss" scoped>
 .login {
   height: 100%;
-  background-color: #eee;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(-45deg, teal, #fff);
 
   &__wrapper {
     width: 300px;
     padding: 20px;
     background-color: #fff;
+    border-radius: 4px;
   }
 
   &__title {

@@ -1,7 +1,7 @@
 <template>
   <el-container class="container">
     <el-aside :width="asideWidth" class="container__aside">
-      <Logo />
+      <Logo class="container__logo" />
       <div class="container__menu">
         <NavMenu />
       </div>
@@ -48,12 +48,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  $box-shadow: 0 0 10px rgba(0,0,0,0.1);
   .container {
     height: 100%;
 
     &__aside {
-      border-right: 1px solid $color-border;
+      background-color: $theme-color-bg-nav;
       transition: width .2s;
+      margin-right: 17px;
+    }
+
+    &__logo {
+      box-shadow: $box-shadow;
     }
 
     &__menu {
@@ -61,8 +67,8 @@ export default {
     }
 
     &__header {
-      background-color: $theme-color-primary;
-      // box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);
+      background-color: #fff;
+      box-shadow: $box-shadow;
     }
 
     &__main {

@@ -1,7 +1,9 @@
 <template>
   <div class="logo" @click="handleClick">
-    <div class="bg" />
-    <div v-show="!isCollapse" class="label">
+    <div class="logo__icon">
+      <icon name="s-icon-code" />
+    </div>
+    <div v-show="!isCollapse" class="logo__text">
       {{ name }}
     </div>
   </div>
@@ -35,23 +37,24 @@ export default {
     height: $header-height;
     flex: 1;
     display: flex;
-    background-color: #fff;
+    background-color: $theme-color-bg-nav;
     cursor: pointer;
 
-    .bg {
+    &__icon {
       box-sizing: border-box;
-      margin: 15px;
       flex: none;
-      width: 30px;
-      background: url('../../assets/logo.png') no-repeat left center;
-      background-size: contain;
+      height: $header-height;
+      width: 64px;
+      color: #fff;
+      font-size: 30px;
+      @include flex-center;
     }
-    .label {
+    &__text {
       flex: 1;
       line-height: $header-height;
       font-size: 20px;
       font-weight: 600;
-      color: #333;
+      color: #fff;
     }
   }
 </style>

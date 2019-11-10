@@ -6,6 +6,7 @@
         v-model="loginForm.account"
         size="medium"
         :placeholder="$t('login.account')"
+        prefix-icon="el-icon-user"
       />
     </el-form-item>
     <el-form-item :label="$t('login.password')" prop="password">
@@ -14,6 +15,7 @@
         size="medium"
         type="password"
         :placeholder="$t('login.password')"
+        prefix-icon="el-icon-key"
       />
     </el-form-item>
     <el-form-item>
