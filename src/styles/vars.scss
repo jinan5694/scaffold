@@ -1,10 +1,18 @@
-@import './theme-default.scss';
+/*
+* 命名规范：属性-组件-描述
+*/
 
-$header-height: 60px;
+// common
+$color-primary: teal; // 主题色
+$color-border: #e5e5e5; // 边框颜色
 
-$color-aside-bg: #282c34;
-$color-header-bg: #bbe6d6;
-$color-border: #e5e5e5;
+$height-header: 50px; // 头部高度
+
+// menu
+$color-menu-bg: #404e67; // 背景色
+$color-menu-text: #dcdcdc; // 文字颜色
+$color-menu-text-active: #fe8a7d; // 选中文字颜色
+$height-menu-item: 48px; // 菜单项高度
 
 // mixins
 @mixin flex-center {
@@ -14,7 +22,9 @@ $color-border: #e5e5e5;
 }
 
 :export {
-  colorPrimary: $theme-color-primary;
-  colorBgNav: $theme-color-bg-nav;
-  colorNav: $theme-color-nav;
+  colorPrimary: $color-primary;
+  heightHeader: $height-header;
+  colorMenuBg: $color-menu-bg;
+  colorMenuText: $color-menu-text;
+  colorMenuTextActive: $color-menu-text-active;
 }

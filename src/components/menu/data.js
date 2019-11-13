@@ -1,7 +1,7 @@
 export default [
   {
     path: '/',
-    icon: 'el-icon-home',
+    icon: 'el-icon-s-home',
     text: '首页'
   },
   {
@@ -39,6 +39,27 @@ export default [
   {
     path: '/about',
     icon: 'el-icon-info',
-    text: '关于'
+    text: '关于',
+    children: [
+      {
+        path: '/about/foo',
+        text: 'foo'
+      },
+      {
+        path: '/about/bar',
+        text: 'bar',
+        children: [
+          {
+            path: '/about/bar/aaa',
+            icon: 'el-icon-info',
+            text: 'aaa'
+          },
+          {
+            path: '/about/bar/bbb',
+            text: 'bbb'
+          }
+        ]
+      }
+    ]
   }
 ]

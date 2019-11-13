@@ -2,12 +2,12 @@
   <el-container class="container">
     <el-aside :width="asideWidth" class="container__aside">
       <Logo class="container__logo" />
-      <div class="container__menu">
+      <el-scrollbar class="container__menu">
         <NavMenu />
-      </div>
+      </el-scrollbar>
     </el-aside>
     <el-container>
-      <el-header class="container__header">
+      <el-header class="container__header" :height="heightHeader">
         <Header />
       </el-header>
       <el-main class="container__main">
@@ -26,6 +26,7 @@ import Logo from './logo'
 import Header from './header'
 import CustomTransition from './transition'
 import NavMenu from '@/components/menu/index'
+import { heightHeader } from '@/styles/vars.scss'
 
 export default {
   name: 'Container',
@@ -34,6 +35,11 @@ export default {
     Header,
     NavMenu,
     CustomTransition
+  },
+  data () {
+    return {
+      heightHeader: heightHeader
+    }
   },
   computed: {
     asideWidth () {
@@ -48,32 +54,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  .container {
-    height: 100%;
+$box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.container {
+  height: 100%;
 
-    &__aside {
-      background-color: $theme-color-bg-nav;
-      transition: width .2s;
-      margin-right: 17px;
-    }
-
-    &__logo {
-      box-shadow: $box-shadow;
-    }
-
-    &__menu {
-      margin: 8px 0;
-    }
-
-    &__header {
-      background-color: #fff;
-      box-shadow: $box-shadow;
-    }
-
-    &__main {
-      overflow-x: hidden;
-    }
+  &__aside {
+    background-color: $color-menu-bg;
+    transition: width .2s;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
   }
+
+  &__logo {
+    box-shadow: $box-shadow;
+    flex: none;
+  }
+
+  &__menu {
+    flex: 1;
+    margin-top: 16px;
+  }
+
+  &__header {
+    background-color: #fff;
+    box-shadow: $box-shadow;
+  }
+
+  &__main {
+    overflow-x: hidden;
+  }
+
+  // override
+  >>> .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
+}
+
+.el-header {
+  padding: 0 8px;
+}
 
 </style>

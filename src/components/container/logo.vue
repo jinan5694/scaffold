@@ -34,16 +34,16 @@ export default {
 
 <style lang="scss" scoped>
   .logo {
-    height: $header-height;
+    height: $height-header;
     flex: 1;
     display: flex;
-    background-color: $theme-color-bg-nav;
+    background-color: $color-menu-bg;
     cursor: pointer;
 
     &__icon {
       box-sizing: border-box;
       flex: none;
-      height: $header-height;
+      height: $height-header;
       width: 64px;
       color: #fff;
       font-size: 30px;
@@ -51,10 +51,11 @@ export default {
     }
     &__text {
       flex: 1;
-      line-height: $header-height;
+      line-height: $height-header;
       font-size: 20px;
       font-weight: 600;
       color: #fff;
+      padding-left: 8px;
     }
   }
 </style>

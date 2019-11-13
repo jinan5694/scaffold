@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     isCollapse () {
-      return this.$store.state.isCollapse
+      return this.$store.state.app.isCollapse
     },
     iconName () {
       return `el-icon-${this.isCollapse ? 's-unfold' : 's-fold'}`

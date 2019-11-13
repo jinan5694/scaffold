@@ -13,6 +13,7 @@ module.exports = {
       ['/page-b', 'Explicit link text'],
       ['/introduction', '介绍'],
       ['/router', '路由'],
+      ['/menu', '菜单'],
       ['/fea', '新特性']
     ],
     displayAllHeaders: true
