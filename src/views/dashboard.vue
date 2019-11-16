@@ -1,18 +1,28 @@
 <template>
-  <div class="dashboard">
-    <p>{{ $store.state.app.locale }}</p>
-    <p>{{ $t('message.hello') }}</p>
-    <el-date-picker v-model="value" />
-    <el-button
-      :loading="loading"
-      @click="query"
-    >
-      {{ $t('query') }}
-    </el-button>
-    <i class="iconfont s-icon-cog-fill" />
-    <i class="el-icon-s-tools" />
-    <pre>{{ $store.getters.menus }}</pre>
-  </div>
+  <Page title="title" sub-title="sub title">
+    <div class="dashboard">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item :to="{path: '/'}">
+          <i class="el-icon-s-home" />
+        </el-breadcrumb-item>
+        <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
+        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
+        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+      </el-breadcrumb>
+      <p>{{ $store.state.app.locale }}</p>
+      <p>{{ $t('message.hello') }}</p>
+      <el-date-picker v-model="value" />
+      <el-button
+        :loading="loading"
+        @click="query"
+      >
+        {{ $t('query') }}
+      </el-button>
+      <i class="iconfont s-icon-cog-fill" />
+      <i class="el-icon-s-tools" />
+      <pre>{{ $store.getters.menus }}</pre>
+    </div>
+  </Page>
 </template>
 <script>
 export default {
