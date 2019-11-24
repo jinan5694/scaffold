@@ -39,7 +39,7 @@ export default {
 
 function isNotString (key) {
   if (typeof key !== 'string') {
-    console.warn(`[app storage] "key" 必须是字符串类型`)
+    console.warn('[app storage] "key" 必须是字符串类型')
     return true
   }
 }

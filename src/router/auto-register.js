@@ -34,7 +34,7 @@ files.keys().forEach(filePath => {
  * @param {string} filePath
  */
 function getRoutePath (filePath) {
-  let routePath = filePath.replace(/(\.vue$)|(\.)/g, '')
+  const routePath = filePath.replace(/(\.vue$)|(\.)/g, '')
 
   // 约定目录下 index 为主文件，可以通过目录名访问。例如：/foo/index.vue -> /foo
   const INDEX_KEY = '/index'
