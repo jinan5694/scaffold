@@ -2,7 +2,7 @@
   <el-container class="container">
     <el-aside :width="asideWidth" class="container__aside">
       <Logo class="container__logo" />
-      <el-scrollbar class="container__menu">
+      <el-scrollbar class="nav-wrapper">
         <NavMenu />
       </el-scrollbar>
     </el-aside>
@@ -71,6 +71,13 @@ $box-shadow: 0 0 10px rgba(0,0,0,0.1);
     flex: none;
   }
 
+  .nav-wrapper {
+    flex: 1;
+    background-color: red;
+    margin: 16px 0;
+    overflow-y: auto;
+  }
+
   &__menu {
     flex: 1;
     margin-top: 16px;
@@ -79,20 +86,12 @@ $box-shadow: 0 0 10px rgba(0,0,0,0.1);
   &__header {
     background-color: #fff;
     box-shadow: $box-shadow;
+    padding: 0 8px;
   }
 
   &__main {
     overflow-x: hidden;
   }
-
-  // override
-  >>> .el-scrollbar__wrap {
-    overflow-x: hidden;
-  }
-}
-
-.el-header {
-  padding: 0 8px;
 }
 
 </style>
