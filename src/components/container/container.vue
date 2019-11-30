@@ -1,31 +1,37 @@
 <template>
-  <el-container class="container">
-    <el-aside :width="asideWidth" class="container__aside">
-      <Logo class="container__logo" />
-      <el-scrollbar class="nav-wrapper" wrap-style="overflow-x: hidden;">
-        <NavMenu />
-      </el-scrollbar>
-    </el-aside>
-    <el-container>
-      <el-header class="container__header" :height="heightHeader">
+  <div :class="{[$style.container]: true, 'isCollapse': isCollapse}">
+    <nav :class="$style.navbar">
+      <div :class="$style.navbarLogo">
+        <Logo />
+      </div>
+      <div :class="$style.navbarContainer">
         <Header />
-      </el-header>
-      <el-main class="container__main">
-        <CustomTransition>
-          <keep-alive>
-            <slot />
-          </keep-alive>
-        </CustomTransition>
-      </el-main>
-    </el-container>
-  </el-container>
+      </div>
+    </nav>
+    <div :class="$style.mainContainer">
+      <div :class="$style.main">
+        <div :class="$style.sidebar">
+          <el-scrollbar :class="$style.scrollbar">
+            <NavMenu />
+          </el-scrollbar>
+        </div>
+        <div :class="$style.content">
+          <CustomTransition>
+            <keep-alive>
+              <slot />
+            </keep-alive>
+          </CustomTransition>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import Logo from './logo'
 import Header from './header'
-import CustomTransition from './transition'
 import NavMenu from '@/components/menu/index'
+import CustomTransition from './transition'
 import { heightHeader } from '@/styles/vars.scss'
 
 export default {
@@ -42,10 +48,6 @@ export default {
     }
   },
   computed: {
-    asideWidth () {
-      // 宽度不能小于200
-      return `${this.isCollapse ? 64 : 210}px`
-    },
     isCollapse () {
       return this.$store.state.app.isCollapse
     }
@@ -53,44 +55,68 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-$box-shadow: 0 0 10px rgba(0,0,0,0.1);
+<style lang="scss" module>
+$color-bg: #f6f7fb;
+$box-shadow: 0 0 10px rgba(0,0,0,0.2);
+$sidebar-width: 240px;
+$sidebar-width-collapse: 64px;
+
 .container {
+  background-color: $color-bg;
+}
+.navbar {
+  width: 100%;
+  position: fixed;
+  height: $height-header;
+  min-height: 50px;
+  background-color: #fff;
+  display: flex;
+  box-shadow: $box-shadow;
+  z-index: 10;
+}
+.navbarLogo {
+  flex: none;
+  width: $sidebar-width;
+}
+.navbarContainer {
+  flex: 1;
+}
+
+.mainContainer {
+  padding-top: $height-header;
+}
+.main {
+  background-color: $color-bg;
+  min-height: calc(100vh - #{$height-header});
+}
+
+.sidebar {
+  position: fixed;
+  width: $sidebar-width;
   height: 100%;
+  background-color: $color-menu-bg;
+  box-shadow: $box-shadow;
+  z-index: 9;
 
-  &__aside {
-    background-color: $color-menu-bg;
-    transition: width .2s;
+}
+.scrollbar {
+  height: calc(100vh - #{$height-header});
+  :global(.el-scrollbar__wrap) {
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
   }
+}
+.content {
+  margin-left: $sidebar-width;
+  position: relative;
+  display: block;
+}
 
-  &__logo {
-    box-shadow: $box-shadow;
-    flex: none;
+:global(.isCollapse) {
+  .navbarLogo, .sidebar {
+    width: $sidebar-width-collapse;
   }
-
-  .nav-wrapper {
-    flex: 1;
-    margin: 16px 0;
-    overflow-y: auto;
-  }
-
-  &__menu {
-    flex: 1;
-    margin-top: 16px;
-  }
-
-  &__header {
-    background-color: #fff;
-    box-shadow: $box-shadow;
-    padding: 0 8px;
-  }
-
-  &__main {
-    overflow-x: hidden;
-    box-shadow: 0 0 10px inset rgba(0,0,0,0.1);
+  .content {
+    margin-left: $sidebar-width-collapse;
   }
 }
 

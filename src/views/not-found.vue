@@ -1,7 +1,7 @@
 <template>
-  <div class="not-found">
+  <Page>
     404
-  </div>
+  </Page>
 </template>
 <script>
 export default {

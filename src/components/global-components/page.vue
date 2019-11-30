@@ -12,6 +12,9 @@
     <div class="page__content">
       <slot />
     </div>
+    <div class="page__footer">
+      footer
+    </div>
   </div>
 </template>
 <script>
@@ -30,6 +33,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.page {
+  padding: 16px;
+}
 .page__header {
   display: flex;
   justify-content: space-between;
@@ -38,5 +44,11 @@ export default {
 .page__content {
   padding: 8px;
   background-color: #fff;
+}
+.page__footer {
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  padding: 16px 0;
 }
 </style>
