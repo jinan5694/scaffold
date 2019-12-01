@@ -1,5 +1,5 @@
 <template>
-  <div :class="{[$style.container]: true, 'isCollapse': isCollapse}">
+  <div :class="[$style.container, {'isCollapse': isCollapse}]">
     <nav :class="$style.navbar">
       <div :class="$style.navbarLogo">
         <Logo />
