@@ -65,8 +65,7 @@ export default {
     }
   }
   &__content {
-    padding: 8px;
-    background-color: #fff;
+    min-height: calc(100vh - 100px);
   }
   &__footer {
     text-align: center;

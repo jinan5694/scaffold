@@ -1,6 +1,6 @@
 <template>
   <Page title="title" sub-title="sub title">
-    <div class="dashboard">
+    <el-card>
       <p>{{ $store.state.app.locale }}</p>
       <p>{{ $t('message.hello') }}</p>
       <el-date-picker v-model="value" />
@@ -13,7 +13,7 @@
       <i class="iconfont s-icon-cog-fill" />
       <i class="el-icon-s-tools" />
       <pre>{{ $store.getters.menus }}</pre>
-    </div>
+    </el-card>
   </Page>
 </template>
 <script>
