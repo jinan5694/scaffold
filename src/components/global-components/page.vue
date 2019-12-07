@@ -6,7 +6,7 @@
         <span>{{ subTitle }}</span>
       </div>
       <div class="page__breadcrumb">
-        breadcrumb
+        <Breadcrumb />
       </div>
     </div>
     <div class="page__content">
@@ -18,7 +18,12 @@
   </div>
 </template>
 <script>
+import Breadcrumb from '@/components/container/breadcrumb'
+
 export default {
+  components: {
+    Breadcrumb
+  },
   props: {
     title: {
       type: String,
@@ -35,20 +40,39 @@ export default {
 <style lang="scss" scoped>
 .page {
   padding: 16px;
-}
-.page__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.page__content {
-  padding: 8px;
-  background-color: #fff;
-}
-.page__footer {
-  text-align: center;
-  color: #999;
-  font-size: 12px;
-  padding: 16px 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+  }
+  &__title {
+    h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+      margin: 0;
+      line-height: 1.7;
+    }
+    span {
+      display: block;
+      font-size: 13px;
+      font-weight: normal;
+      color: #999;
+      line-height: 1.3;
+      margin-top: 8px;
+    }
+  }
+  &__content {
+    padding: 8px;
+    background-color: #fff;
+  }
+  &__footer {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    padding: 16px 0;
+  }
 }
 </style>

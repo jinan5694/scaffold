@@ -17,14 +17,15 @@ const routes = [
     }
   },
   {
-    path: '/',
+    path: '',
     component: Home,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: { i18n: 'route.home' }
     },
     children: [
       {
-        path: '',
+        path: '/',
         name: 'dashboard',
         component: () => import('@/views/dashboard.vue'),
         meta: {
