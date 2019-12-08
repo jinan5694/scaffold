@@ -12,6 +12,8 @@
       </el-button>
       <i class="iconfont s-icon-cog-fill" />
       <i class="el-icon-s-tools" />
+      <div class="a b">a</div>
+      <div class="b a">b</div>
       <pre>{{ $store.getters.menus }}</pre>
     </el-card>
   </Page>
@@ -38,10 +40,19 @@ export default {
       }).finally(() => {
         this.loading = false
       })
+    },
+    test () {
+      const a = {}
+      console.log(a?.b)
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-
+<style lang="scss">
+.a {
+  color: red !important;
+}
+.b {
+  color: blue !important;
+}
 </style>
