@@ -14,6 +14,9 @@ $color-menu-text: #dcdcdc; // 文字颜色
 $color-menu-text-active: #fe8a7d; // 选中文字颜色
 $height-menu-item: 48px; // 菜单项高度
 
+$box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+$box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
 // mixins
 @mixin flex-center {
   display: flex;

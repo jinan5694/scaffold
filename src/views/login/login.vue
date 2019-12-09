@@ -25,11 +25,17 @@ export default {
   align-items: center;
   background: linear-gradient(-45deg, teal, #fff);
 
+  background-color: #ffffff;
+  background-image: url('../../assets/svg/background.svg');
+  background-attachment: fixed;
+  background-size: cover;
+
   &__wrapper {
     width: 300px;
     padding: 20px;
     background-color: #fff;
     border-radius: 4px;
+    box-shadow: $box-shadow-light;
   }
 
   &__title {
@@ -37,5 +43,4 @@ export default {
     color: #999;
   }
 }
-
 </style>

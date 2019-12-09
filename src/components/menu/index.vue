@@ -36,9 +36,9 @@ export default {
       }
       return this.getMenuItem(item)
     },
-    getMenuItem (item) {
+    getMenuItem (item, ctx) {
       return (
-        <el-menu-item index={item.path}>
+        <el-menu-item index={this.getIndex(item)}>
           {item.icon && <icon name={item.icon} />}
           {this.getTitle(item)}
         </el-menu-item>
@@ -46,7 +46,7 @@ export default {
     },
     getSubMenu (item) {
       return (
-        <el-submenu index={item.path}>
+        <el-submenu index={this.getIndex(item)}>
           <template slot="title">
             {item.icon && <icon name={item.icon} />}
             {this.getTitle(item, 'title')}
@@ -65,6 +65,11 @@ export default {
           { item.text }
         </span>
       )
+    },
+    getIndex (item) {
+      return item.children && item.children.length
+        ? item.id
+        : item.path
     }
   },
   render () {

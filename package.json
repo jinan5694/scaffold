@@ -9,9 +9,9 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "@vue/composition-api": "^0.3.2",
+    "@vue/composition-api": "^0.3.4",
     "axios": "^0.19.0",
-    "core-js": "^3.4.5",
+    "core-js": "^3.4.7",
     "element-ui": "^2.13.0",
     "lodash": "^4.17.15",
     "normalize.css": "^8.0.1",
@@ -27,9 +27,9 @@
     "@vue/cli-plugin-router": "^4.1.1",
     "@vue/cli-plugin-vuex": "^4.1.1",
     "@vue/cli-service": "^4.1.1",
-    "@vue/eslint-config-standard": "^5.0.0",
+    "@vue/eslint-config-standard": "^5.0.1",
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.1",
+    "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",

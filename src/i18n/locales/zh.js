@@ -17,8 +17,9 @@ export default {
     reload: '在给一次机会'
   },
   route: {
+    dashboard: '控制台',
+    home: '首页',
     login: '登录',
-    dashboard: '首页',
     notFound: '404'
   },
   query: '查询',

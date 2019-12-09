@@ -1,14 +1,6 @@
 <template>
   <Page title="title" sub-title="sub title">
-    <div class="dashboard">
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{path: '/'}">
-          <i class="el-icon-s-home" />
-        </el-breadcrumb-item>
-        <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-      </el-breadcrumb>
+    <el-card>
       <p>{{ $store.state.app.locale }}</p>
       <p>{{ $t('message.hello') }}</p>
       <el-date-picker v-model="value" />
@@ -20,8 +12,10 @@
       </el-button>
       <i class="iconfont s-icon-cog-fill" />
       <i class="el-icon-s-tools" />
+      <div class="a b">a</div>
+      <div class="b a">b</div>
       <pre>{{ $store.getters.menus }}</pre>
-    </div>
+    </el-card>
   </Page>
 </template>
 <script>
@@ -46,10 +40,19 @@ export default {
       }).finally(() => {
         this.loading = false
       })
+    },
+    test () {
+      const a = {}
+      console.log(a?.b)
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-
+<style lang="scss">
+.a {
+  color: red !important;
+}
+.b {
+  color: blue !important;
+}
 </style>
