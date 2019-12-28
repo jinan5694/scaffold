@@ -42,8 +42,7 @@ export default {
       })
     },
     test () {
-      const a = {}
-      console.log(a?.b)
+
     }
   }
 }
